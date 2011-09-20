@@ -1,16 +1,14 @@
 package org.ast.example
 
-import _root_.android.os.Bundle
-import _root_.android.widget.TextView
+import android.view.View
+import util.Activity
+import android.content.Intent
 
-class HomeActivity extends TypedActivity {
+class HomeActivity extends Activity {
 
-  override def onCreate(savedInstanceState: Bundle) {
-    super.onCreate(savedInstanceState)
+  val contentView: Int = R.layout.activity_home
 
-    setContentView(new TextView(this) {
-      setText("hello, world")
-    })
+  val init = {
+    loginButton.setOnClickListener( (v: View) => startActivity(new Intent(HomeActivity.this, classOf[NextActivity] )))
   }
-
 }
