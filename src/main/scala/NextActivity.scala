@@ -1,8 +1,8 @@
 package org.ast.example
 
-import util.Activity
+import android.app.ListActivity
 
-class NextActivity extends Activity {
+class NextActivity extends ListActivity with OptionsMenu {
 
   val contentView: Int = R.layout.activity_next
 

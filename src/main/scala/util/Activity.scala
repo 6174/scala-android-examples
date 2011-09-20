@@ -1,14 +1,13 @@
 package org.ast.example.util
 
-import org.ast.example.{TR, TypedActivity}
 import android.os.Bundle
 import android.view.View
+import org.ast.example.{OptionsMenu, TR, TypedActivity}
 
 /**
  * @author me@andresteingress.com
- */
-
-abstract class Activity extends TypedActivity {
+ **/
+trait Activity extends android.app.Activity with TypedActivity with OptionsMenu {
 
   lazy val usernameEditText = findView(TR.usernameEditText)
   lazy val passwordEditText = findView(TR.passwordEditText)
@@ -32,6 +31,5 @@ abstract class Activity extends TypedActivity {
         f(view)
       }
     }
-
   }
 }
